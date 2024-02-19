@@ -1,0 +1,207 @@
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "Mock1_R1_001.fastq" "Mock1_R2_001.fastq" "Mock2_R1_001.fastq" "Mock2_R2_001.fastq"); for file in "${files[@]}"; do count=$(grep -o -i "GGTGGTGGGGGAGGAGGAAGG" "$file" | wc -l); echo "$count" >> counts.txt; done
+
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "Mock1_R1_001.fastq" "Mock1_R2_001.fastq" "Mock2_R1_001.fastq" "Mock2_R2_001.fastq"); motifs=("GGTGGTGGGGGAGGAGGAAGG" "CCTTCCTCCTCCCCCACCACC" "CGGGTCCGGAAGGGGAAGGGT" "ACCCTTCCCCTTCCGGACCCG"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts.txt; done
+
+——————————————————————
+“Count the following sequences 
+AGGGCGGCGCCGCCGCCGGAAGA  (COS siRNA)
+TCTTCCGGCGGCGGCGCCGCCCT (rc of COS siRNA)
+TGGGGGAGGAGGAAGGCGGGTCC  (RIG-I siRNA)
+GGACCCGCCTTCCTCCTCCCCCA  (rc of (RIG-I siRNA)
+GCCGTCGGCCGCGCGCTCTCTCT (HSV siRNA)
+AGAGAGAGCGCGCGGCCGACGGC (rc of HSV siRNA)) 
+
+In the following files:
+HSV1_R1_001.fastq
+HSV1_R2_001.fastq
+HSV2_R1_001.fastq
+HSV2_R2_001.fastq
+Mock1_R1_001.fastq
+Mock1_R2_001.fastq
+Mock2_R1_001.fastq
+Mock2_R2_001.fastq" etc.
+
+
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("@" "AGGGCGGCGCCGCCGCCGGAAGA" "TCTTCCGGCGGCGGCGCCGCCCT" "TGGGGGAGGAGGAAGGCGGGTCC" "GGACCCGCCTTCCTCCTCCCCCA" "GCCGTCGGCCGCGCGCTCTCTCT" "AGAGAGAGCGCGCGGCCGACGGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts1.txt; done &
+
+
+——————————————————————
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("CTCCGTCCCCCTAAGCGCAGA" "TCTGCGCTTAGGGGGACGGAG"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts1.txt; done &
+
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("GGTGGCGGGGGGGAGAGGGGG" "CCCCCTCTCCCCCCCGCCACC" "GCGCGCCCGGCTGAGAGAGAC" "GTCTCTCTCAGCCGGGCGCGC" "GGGGAGGGCGGCGCCGCCGCC" "GGCGGCGGCGCCGCCCTCCCC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts1.txt; done &
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("CGCGCGCGGCTCGGGGTTCGG" "CCGAACCCCGAGCCGCGCGCG" "GGTTCGTCGGCCCCGGCCGGG" "CCCGGCCGGGGCCGACGAACC" "TGGAAGGTCCCGTGCCCGTCG" "CGACGGGCACGGGACCTTCCA" "TCGTCGTCGTCGCGCGT" "ACGCGCGACGACGACGA"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts2.txt; done &
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("GGTGGTGGGGGAGGAGGAAGG" "CCTTCCTCCTCCCCCACCACC" "CGGGTCCGGAAGGGGAAGGGT" "ACCCTTCCCCTTCCGGACCCG"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts3.txt; done &
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "Mock1_R1_001.fastq" "Mock1_R2_001.fastq" "Mock2_R1_001.fastq" "Mock2_R2_001.fastq"); motifs=("TCCGGTCGTCCCGCTCCGGCG" "CGCCGGAGCGGGACGACCGGA" "GGGCGGCGCGGGGGCGCCGTC" "GACGGCGCCCCCGCGCCGCCC" "GGCCGCGCGCTCTCTCTCCCG" "CGGGAGAGAGAGCGCGCGGCC" "GCGCCGTCGGCCGCGCGCTCTCT" "AGAGAGCGCGCGGCCGACGGCGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts.txt; done &
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("TCCGGTCGTCCCGCTCCGGCG" "CGCCGGAGCGGGACGACCGGA" "GGGCGGCGCGGGGGCGCCGTC" "GACGGCGCCCCCGCGCCGCCC" "GGCCGCGCGCTCTCTCTCCCG" "CGGGAGAGAGAGCGCGCGGCC" "GCGCCGTCGGCCGCGCGCTCTCT" "AGAGAGCGCGCGGCCGACGGCGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts1.txt; done &
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("TCGCCTCTCCCCCTCGCCGGGC" "GCCCGGCGAGGGGGAGAGGCGA" "CCGTCTCCCGACGGAGCGTCG" "CGACGCTCCGTCGGGAGACGG" "GGCGGGCGGTCGGGCCGGCGC" "GCGCCGGCCCGACCGCCCGCC" "TTCCGTCCGTCCGTCCGCCGA" "TCGGCGGACGGACGGACGGAA" "GCGGCCCGTCCCCCTCCGAGA" "TCTCGGAGGGGGACGGGCCGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts1.txt; done &
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "Mock1_R1_001.fastq" "Mock1_R2_001.fastq" "Mock2_R1_001.fastq" "Mock2_R2_001.fastq"); motifs=("TCGCCTCTCCCCCTCGCCGGGC" "GCCCGGCGAGGGGGAGAGGCGA" "CCGTCTCCCGACGGAGCGTCG" "CGACGCTCCGTCGGGAGACGG" "GGCGGGCGGTCGGGCCGGCGC" "GCGCCGGCCCGACCGCCCGCC" "TTCCGTCCGTCCGTCCGCCGA" "TCGGCGGACGGACGGACGGAA" "GCGGCCCGTCCCCCTCCGAGA" "TCTCGGAGGGGGACGGGCCGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts.txt; done &
+
+
+sort -k2 -g its2_NCBIvirus_blastR1.fmt6m | head -n 100 > lowest_e_ITS2.txt
+awk 'FNR==NR && /^>/{a[$2]=$0; next} ($1 in a){print a[$1]}' <(grep '^>' its2.fasta) lowest_e_ITS2.txt > fasta_name_match1.txt
+paste -d '\t' fasta_name_match1.txt lowest_e_ITS2.txt > fasta_blast.txt
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "Mock1_R1_001.fastq" "Mock1_R2_001.fastq" "Mock2_R1_001.fastq" "Mock2_R2_001.fastq"); for file in "${files[@]}"; do count=$(grep -o -i “@“ "$file" | wc -l); echo "$count" >> count_all_reads.txt; done
+
+_________________________________ siRNAseq manipulations
+“Count the following sequences 
+AGGGCGGCGCCGCCGCCGGAAGA  (KOS siRNA)
+TCTTCCGGCGGCGGCGCCGCCCT (rc of KOS siRNA)
+TGGGGGAGGAGGAAGGCGGGTCC  (RIG-I siRNA)
+GGACCCGCCTTCCTCCTCCCCCA  (rc of (RIG-I siRNA)
+GCCGTCGGCCGCGCGCTCTCTCT (HSV siRNA)
+AGAGAGAGCGCGCGGCCGACGGC (rc of HSV siRNA)) 
+
+In the following files:
+Alphaherpes-mock-1_R1_001.fastq.gz
+Alphaherpes-mock-1_R2_001.fastq.gz
+Alphaherpes-mock-2_R1_001.fastq.gz
+Alphaherpes-mock-2_R2_001.fastq.gz
+Alphaherpes-mock-3_R1_001.fastq.gz
+Alphaherpes-mock-3_R2_001.fastq.gz
+Alphaherpes-mock-4_R1_001.fastq.gz
+Alphaherpes-mock-4_R2_001.fastq.gz
+KOS-Mock-1_R1_001.fastq.gz
+KOS-Mock-1_R2_001.fastq.gz
+KOS-Mock-2_R1_001.fastq.gz
+KOS-Mock-2_R2_001.fastq.gz
+KOS-Mock-3_R1_001.fastq.gz
+KOS-Mock-3_R2_001.fastq.gz
+KOS-Mock-4_R1_001.fastq.gz
+KOS-Mock-4_R2_001.fastq.gz
+RIG-I-mock-1_R1_001.fastq.gz
+RIG-I-mock-1_R2_001.fastq.gz
+RIG-I-mock-2_R1_001.fastq.gz
+RIG-I-mock-2_R2_001.fastq.gz
+RIG-I-mock-3_R1_001.fastq.gz
+RIG-I-mock-3_R2_001.fastq.gz
+RIG-I-mock-4_R1_001.fastq.gz
+RIG-I-mock-4_R2_001.fastq.gz”
+
+files=("Alphaherpes-mock-1_R1_001.fastq.gz" "Alphaherpes-mock-1_R2_001.fastq.gz" "Alphaherpes-mock-2_R1_001.fastq.gz" "Alphaherpes-mock-2_R2_001.fastq.gz" "Alphaherpes-mock-3_R1_001.fastq.gz" "Alphaherpes-mock-3_R2_001.fastq.gz" "Alphaherpes-mock-4_R1_001.fastq.gz" "Alphaherpes-mock-4_R2_001.fastq.gz" "KOS-Mock-1_R1_001.fastq.gz" "KOS-Mock-1_R2_001.fastq.gz" "KOS-Mock-2_R1_001.fastq.gz" "KOS-Mock-2_R2_001.fastq.gz" "KOS-Mock-3_R1_001.fastq.gz" "KOS-Mock-3_R2_001.fastq.gz" "KOS-Mock-4_R1_001.fastq.gz" "mKOS-Mock-4_R2_001.fastq.gz" "RIG-I-mock-1_R1_001.fastq.gz" "RIG-I-mock-1_R2_001.fastq.gz" "RIG-I-mock-2_R1_001.fastq.gz" "RIG-I-mock-2_R2_001.fastq.gz" "RIG-I-mock-3_R1_001.fastq.gz" "RIG-I-mock-3_R2_001.fastq.gz" "RIG-I-mock-4_R1_001.fastq.gz" "RIG-I-mock-4_R2_001.fastq.gz"); motifs=("@" "AGGGCGGCGCCGCCGCCGGAAGA" "TCTTCCGGCGGCGGCGCCGCCCT" "TGGGGGAGGAGGAAGGCGGGTCC" "GGACCCGCCTTCCTCCTCCCCCA" "GCCGTCGGCCGCGCGCTCTCTCT" "AGAGAGAGCGCGCGGCCGACGGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" >> counts_treat.txt; done &
+
+“Count the following sequences 
+GGGCGGCGCCGCCGCCGCCCGCG  (KOS siRNA)
+CGCGGGCGGCGGCGGCGCCGCCC (rc of KOS siRNA)
+TGGGGGAGGAGGAAGGCGGGTCC  (RIG-I siRNA)
+GGACCCGCCTTCCTCCTCCCCCA  (rc of (RIG-I siRNA)
+GCCGTCGGCCGCGCGCTCTCTCT (HSV siRNA)
+AGAGAGAGCGCGCGGCCGACGGC (rc of HSV siRNA)) 
+
+In the following files:
+scramble-mock-1_R1_001.fastq.gz
+scramble-mock-1_R2_001.fastq.gz
+scramble-mock-2_R1_001.fastq.gz
+scramble-mock-2_R2_001.fastq.gz
+scramble-mock-3_R1_001.fastq.gz
+scramble-mock-3_R2_001.fastq.gz
+scramble-mock-4_R1_001.fastq.gz
+scramble-mock-4_R2_001.fastq.gz”
+
+files=("scramble-mock-1_R1_001.fastq.gz" "scramble-mock-1_R2_001.fastq.gz" "scramble-mock-2_R1_001.fastq.gz" "scramble-mock-2_R2_001.fastq.gz" "scramble-mock-3_R1_001.fastq.gz" "scramble-mock-3_R2_001.fastq.gz" "scramble-mock-4_R1_001.fastq.gz" "scramble-mock-4_R2_001.fastq.gz"); motifs=("@" "GGGCGGCGCCGCCGCCGCCCGCG" "CGCGGGCGGCGGCGGCGCCGCCC" "TGGGGGAGGAGGAAGGCGGGTCC" "GGACCCGCCTTCCTCCTCCCCCA" "GCCGTCGGCCGCGCGCTCTCTCT" "AGAGAGAGCGCGCGGCCGACGGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e $counts >> ~/siRNAseq/counts_scram.txt; done &
+
+
+files=("Alphaherpes-mock-1_R1_001.fastq.gz" "Alphaherpes-mock-1_R2_001.fastq.gz" "Alphaherpes-mock-2_R1_001.fastq.gz" "Alphaherpes-mock-2_R2_001.fastq.gz" "Alphaherpes-mock-3_R1_001.fastq.gz" "Alphaherpes-mock-3_R2_001.fastq.gz" "Alphaherpes-mock-4_R1_001.fastq.gz" "Alphaherpes-mock-4_R2_001.fastq.gz" "KOS-Mock-1_R1_001.fastq.gz" "KOS-Mock-1_R2_001.fastq.gz" "KOS-Mock-2_R1_001.fastq.gz" "KOS-Mock-2_R2_001.fastq.gz" "KOS-Mock-3_R1_001.fastq.gz" "KOS-Mock-3_R2_001.fastq.gz" "KOS-Mock-4_R1_001.fastq.gz" "KOS-Mock-4_R2_001.fastq.gz" "RIG-I-mock-1_R1_001.fastq.gz" "RIG-I-mock-1_R2_001.fastq.gz" "RIG-I-mock-2_R1_001.fastq.gz" "RIG-I-mock-2_R2_001.fastq.gz" "RIG-I-mock-3_R1_001.fastq.gz" "RIG-I-mock-3_R2_001.fastq.gz" "RIG-I-mock-4_R1_001.fastq.gz" "RIG-I-mock-4_R2_001.fastq.gz" "scramble-mock-1_R1_001.fastq.gz" "scramble-mock-1_R2_001.fastq.gz" "scramble-mock-2_R1_001.fastq.gz" "scramble-mock-2_R2_001.fastq.gz" "scramble-mock-3_R1_001.fastq.gz" "scramble-mock-3_R2_001.fastq.gz" "scramble-mock-4_R1_001.fastq.gz" "scramble-mock-4_R2_001.fastq.gz"); motifs=("@" "GGGCGGCGCCGCCGCCGCCCGCG" "CGCGGGCGGCGGCGGCGCCGCCC" "TGGGGGAGGAGGAAGGCGGGTCC" "GGACCCGCCTTCCTCCTCCCCCA" "GCCGTCGGCCGCGCGCTCTCTCT" "AGAGAGAGCGCGCGGCCGACGGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e $counts >> ~/siRNAseq/counts.txt; done &
+
+
+“Count the following sequences (shift +1 bp relative to the oligo target)
+GGCGGCGCCGCCGCCGCCCGCGA  (KOS siRNA)
+TCGCGGGCGGCGGCGGCGCCGCC (rc of KOS siRNA)
+GGGGGAGGAGGAAGGCGGGTCCG  (RIG-I siRNA)
+CGGACCCGCCTTCCTCCTCCCCC  (rc of (RIG-I siRNA)
+CCGTCGGCCGCGCGCTCTCTCTC (HSV siRNA)
+GAGAGAGAGCGCGCGGCCGACGG (rc of HSV siRNA)) 
+
+files=("Alphaherpes-mock-1_R1_001.fastq.gz" "Alphaherpes-mock-1_R2_001.fastq.gz" "Alphaherpes-mock-2_R1_001.fastq.gz" "Alphaherpes-mock-2_R2_001.fastq.gz" "Alphaherpes-mock-3_R1_001.fastq.gz" "Alphaherpes-mock-3_R2_001.fastq.gz" "Alphaherpes-mock-4_R1_001.fastq.gz" "Alphaherpes-mock-4_R2_001.fastq.gz" "KOS-Mock-1_R1_001.fastq.gz" "KOS-Mock-1_R2_001.fastq.gz" "KOS-Mock-2_R1_001.fastq.gz" "KOS-Mock-2_R2_001.fastq.gz" "KOS-Mock-3_R1_001.fastq.gz" "KOS-Mock-3_R2_001.fastq.gz" "KOS-Mock-4_R1_001.fastq.gz" "KOS-Mock-4_R2_001.fastq.gz" "RIG-I-mock-1_R1_001.fastq.gz" "RIG-I-mock-1_R2_001.fastq.gz" "RIG-I-mock-2_R1_001.fastq.gz" "RIG-I-mock-2_R2_001.fastq.gz" "RIG-I-mock-3_R1_001.fastq.gz" "RIG-I-mock-3_R2_001.fastq.gz" "RIG-I-mock-4_R1_001.fastq.gz" "RIG-I-mock-4_R2_001.fastq.gz" "scramble-mock-1_R1_001.fastq.gz" "scramble-mock-1_R2_001.fastq.gz" "scramble-mock-2_R1_001.fastq.gz" "scramble-mock-2_R2_001.fastq.gz" "scramble-mock-3_R1_001.fastq.gz" "scramble-mock-3_R2_001.fastq.gz" "scramble-mock-4_R1_001.fastq.gz" "scramble-mock-4_R2_001.fastq.gz"); motifs=("@" "GGCGGCGCCGCCGCCGCCCGCGA" "TCGCGGGCGGCGGCGGCGCCGCC" "GGGGGAGGAGGAAGGCGGGTCCG" "CGGACCCGCCTTCCTCCTCCCCC" "CCGTCGGCCGCGCGCTCTCTCTC" "GAGAGAGAGCGCGCGGCCGACGG"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e $counts >> ~/siRNAseq/counts_1.txt; done &
+
+
+“Same, but lists zero counts, if needed:”
+files=("Alphaherpes-mock-1_R1_001.fastq.gz" "Alphaherpes-mock-1_R2_001.fastq.gz" "Alphaherpes-mock-2_R1_001.fastq.gz" "Alphaherpes-mock-2_R2_001.fastq.gz" "Alphaherpes-mock-3_R1_001.fastq.gz" "Alphaherpes-mock-3_R2_001.fastq.gz" "Alphaherpes-mock-4_R1_001.fastq.gz" "Alphaherpes-mock-4_R2_001.fastq.gz" "KOS-Mock-1_R1_001.fastq.gz" "KOS-Mock-1_R2_001.fastq.gz" "KOS-Mock-2_R1_001.fastq.gz" "KOS-Mock-2_R2_001.fastq.gz" "KOS-Mock-3_R1_001.fastq.gz" "KOS-Mock-3_R2_001.fastq.gz" "KOS-Mock-4_R1_001.fastq.gz" "KOS-Mock-4_R2_001.fastq.gz" "RIG-I-mock-1_R1_001.fastq.gz" "RIG-I-mock-1_R2_001.fastq.gz" "RIG-I-mock-2_R1_001.fastq.gz" "RIG-I-mock-2_R2_001.fastq.gz" "RIG-I-mock-3_R1_001.fastq.gz" "RIG-I-mock-3_R2_001.fastq.gz" "RIG-I-mock-4_R1_001.fastq.gz" "RIG-I-mock-4_R2_001.fastq.gz" "scramble-mock-1_R1_001.fastq.gz" "scramble-mock-1_R2_001.fastq.gz" "scramble-mock-2_R1_001.fastq.gz" "scramble-mock-2_R2_001.fastq.gz" "scramble-mock-3_R1_001.fastq.gz" "scramble-mock-3_R2_001.fastq.gz" "scramble-mock-4_R1_001.fastq.gz" "scramble-mock-4_R2_001.fastq.gz"); motifs=("@" "GGCGGCGCCGCCGCCGCCCGCGA" "TCGCGGGCGGCGGCGGCGCCGCC" "GGGGGAGGAGGAAGGCGGGTCCG" "CGGACCCGCCTTCCTCCTCCCCC" "CCGTCGGCCGCGCGCTCTCTCTC" "GAGAGAGAGCGCGCGGCCGACGG"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; echo -e "$counts" | sed -E 's/(\t\t)+/\t0\t/g' >> ~/siRNAseq/counts_1.txt; done &
+
+
+
+“Count the following sequences (ITS1), and list zero counts, if needed
+TCGGGAGGGAGACGGGGGGGAGA 
+TCTCCCCCCCGTCTCCCTCCCGA 
+CCTCGTCCGCCCCCCCGCCGTCC 
+GGACGGCGGGGGGGCGGACGAGG 
+GCGCCTCCCCGTGGTGTGAAACC 
+GGTTTCACACCACGGGGAGGCGC”
+
+files=("Alphaherpes-mock-1_R1_001.fastq.gz" "Alphaherpes-mock-1_R2_001.fastq.gz" "Alphaherpes-mock-2_R1_001.fastq.gz" "Alphaherpes-mock-2_R2_001.fastq.gz" "Alphaherpes-mock-3_R1_001.fastq.gz" "Alphaherpes-mock-3_R2_001.fastq.gz" "Alphaherpes-mock-4_R1_001.fastq.gz" "Alphaherpes-mock-4_R2_001.fastq.gz" "KOS-Mock-1_R1_001.fastq.gz" "KOS-Mock-1_R2_001.fastq.gz" "KOS-Mock-2_R1_001.fastq.gz" "KOS-Mock-2_R2_001.fastq.gz" "KOS-Mock-3_R1_001.fastq.gz" "KOS-Mock-3_R2_001.fastq.gz" "KOS-Mock-4_R1_001.fastq.gz" "KOS-Mock-4_R2_001.fastq.gz" "RIG-I-mock-1_R1_001.fastq.gz" "RIG-I-mock-1_R2_001.fastq.gz" "RIG-I-mock-2_R1_001.fastq.gz" "RIG-I-mock-2_R2_001.fastq.gz" "RIG-I-mock-3_R1_001.fastq.gz" "RIG-I-mock-3_R2_001.fastq.gz" "RIG-I-mock-4_R1_001.fastq.gz" "RIG-I-mock-4_R2_001.fastq.gz" "scramble-mock-1_R1_001.fastq.gz" "scramble-mock-1_R2_001.fastq.gz" "scramble-mock-2_R1_001.fastq.gz" "scramble-mock-2_R2_001.fastq.gz" "scramble-mock-3_R1_001.fastq.gz" "scramble-mock-3_R2_001.fastq.gz" "scramble-mock-4_R1_001.fastq.gz" "scramble-mock-4_R2_001.fastq.gz"); motifs=("@" "TCGGGAGGGAGACGGGGGGGAGA" "TCTCCCCCCCGTCTCCCTCCCGA" "CCTCGTCCGCCCCCCCGCCGTCC" "GGACGGCGGGGGGGCGGACGAGG" "GCGCCTCCCCGTGGTGTGAAACC" "GGTTTCACACCACGGGGAGGCGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> ~/siRNAseq/counts_ITS1a.txt; done &
+
+
+
+“Count the following sequences 
+GGGCGGCGCCGCCGCCGCCCGCG  (KOS siRNA)
+CGCGGGCGGCGGCGGCGCCGCCC (rc of KOS siRNA)
+TGGGGGAGGAGGAAGGCGGGTCC  (RIG-I siRNA)
+GGACCCGCCTTCCTCCTCCCCCA  (rc of (RIG-I siRNA)
+GCCGTCGGCCGCGCGCTCTCTCT (HSV siRNA)
+AGAGAGAGCGCGCGGCCGACGGC (rc of HSV siRNA)) 
+
+files=("Alphaherpes-72h-1_R1_001.fastq.gz" "Alphaherpes-72h-1_R2_001.fastq.gz" "Alphaherpes-72h-2_R1_001.fastq.gz" "Alphaherpes-72h-2_R2_001.fastq.gz" "Alphaherpes-72h-3_R1_001.fastq.gz" "Alphaherpes-72h-3_R2_001.fastq.gz" "Alphaherpes-72h-4_R1_001.fastq.gz" "Alphaherpes-72h-4_R2_001.fastq.gz" "KOS-72h-1_R1_001.fastq.gz" "KOS-72h-1_R2_001.fastq.gz" "KOS-72h-2_R1_001.fastq.gz" "KOS-72h-2_R2_001.fastq.gz" "KOS-72h-3_R1_001.fastq.gz" "KOS-72h-3_R2_001.fastq.gz" "KOS-72h-4_R1_001.fastq.gz" "KOS-72h-4_R2_001.fastq.gz" "RIG-I-72h-1_R1_001.fastq.gz" "RIG-I-72h-1_R2_001.fastq.gz" "RIG-I-72h-2_R1_001.fastq.gz" "RIG-I-72h-2_R2_001.fastq.gz" "RIG-I-72h-3_R1_001.fastq.gz" "RIG-I-72h-3_R2_001.fastq.gz" "RIG-I-72h-4_R1_001.fastq.gz" "RIG-I-72h-4_R2_001.fastq.gz" "scramble-72h-1_R1_001.fastq.gz" "scramble-72h-1_R2_001.fastq.gz" "scramble-72h-2_R1_001.fastq.gz" "scramble-72h-2_R2_001.fastq.gz" "scramble-72h-3_R1_001.fastq.gz" "scramble-72h-3_R2_001.fastq.gz" "scramble-72h-4_R1_001.fastq.gz" "scramble-72h-4_R2_001.fastq.gz"); motifs=("@" "GGGCGGCGCCGCCGCCGCCCGCG" "CGCGGGCGGCGGCGGCGCCGCCC" "TGGGGGAGGAGGAAGGCGGGTCC" "GGACCCGCCTTCCTCCTCCCCCA" "GCCGTCGGCCGCGCGCTCTCTCT" "AGAGAGAGCGCGCGGCCGACGGC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> counts_ITS2.txt; done &
+
+“Count the following sequences 
+
+AGGGCGGCGCCGCCGCCGGAAGA (KOS siRNA)
+TCTTCCGGCGGCGGCGCCGCCCT (rc KOS siRNA)
+GAGGGCACCCGGAGGGGGAGAGG (scramble)
+CCTCTCCCCCTCCGGGTGCCCTC rc scramble )"
+
+files=("Alphaherpes-72h-1_R1_001.fastq.gz" "Alphaherpes-72h-1_R2_001.fastq.gz" "Alphaherpes-72h-2_R1_001.fastq.gz" "Alphaherpes-72h-2_R2_001.fastq.gz" "Alphaherpes-72h-3_R1_001.fastq.gz" "Alphaherpes-72h-3_R2_001.fastq.gz" "Alphaherpes-72h-4_R1_001.fastq.gz" "Alphaherpes-72h-4_R2_001.fastq.gz" "KOS-72h-1_R1_001.fastq.gz" "KOS-72h-1_R2_001.fastq.gz" "KOS-72h-2_R1_001.fastq.gz" "KOS-72h-2_R2_001.fastq.gz" "KOS-72h-3_R1_001.fastq.gz" "KOS-72h-3_R2_001.fastq.gz" "KOS-72h-4_R1_001.fastq.gz" "KOS-72h-4_R2_001.fastq.gz" "RIG-I-72h-1_R1_001.fastq.gz" "RIG-I-72h-1_R2_001.fastq.gz" "RIG-I-72h-2_R1_001.fastq.gz" "RIG-I-72h-2_R2_001.fastq.gz" "RIG-I-72h-3_R1_001.fastq.gz" "RIG-I-72h-3_R2_001.fastq.gz" "RIG-I-72h-4_R1_001.fastq.gz" "RIG-I-72h-4_R2_001.fastq.gz" "scramble-72h-1_R1_001.fastq.gz" "scramble-72h-1_R2_001.fastq.gz" "scramble-72h-2_R1_001.fastq.gz" "scramble-72h-2_R2_001.fastq.gz" "scramble-72h-3_R1_001.fastq.gz" "scramble-72h-3_R2_001.fastq.gz" "scramble-72h-4_R1_001.fastq.gz" "scramble-72h-4_R2_001.fastq.gz"); motifs=("AGGGCGGCGCCGCCGCCGGAAGA" "TCTTCCGGCGGCGGCGCCGCCCT" "GAGGGCACCCGGAGGGGGAGAGG" "CCTCTCCCCCTCCGGGTGCCCTC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> counts_scramble72h.txt; done &
+
+files=("Alphaherpes-mock-1_R1_001.fastq.gz" "Alphaherpes-mock-1_R2_001.fastq.gz" "Alphaherpes-mock-2_R1_001.fastq.gz" "Alphaherpes-mock-2_R2_001.fastq.gz" "Alphaherpes-mock-3_R1_001.fastq.gz" "Alphaherpes-mock-3_R2_001.fastq.gz" "Alphaherpes-mock-4_R1_001.fastq.gz" "Alphaherpes-mock-4_R2_001.fastq.gz" "KOS-Mock-1_R1_001.fastq.gz" "KOS-Mock-1_R2_001.fastq.gz" "KOS-Mock-2_R1_001.fastq.gz" "KOS-Mock-2_R2_001.fastq.gz" "KOS-Mock-3_R1_001.fastq.gz" "KOS-Mock-3_R2_001.fastq.gz" "KOS-Mock-4_R1_001.fastq.gz" "KOS-Mock-4_R2_001.fastq.gz" "RIG-I-mock-1_R1_001.fastq.gz" "RIG-I-mock-1_R2_001.fastq.gz" "RIG-I-mock-2_R1_001.fastq.gz" "RIG-I-mock-2_R2_001.fastq.gz" "RIG-I-mock-3_R1_001.fastq.gz" "RIG-I-mock-3_R2_001.fastq.gz" "RIG-I-mock-4_R1_001.fastq.gz" "RIG-I-mock-4_R2_001.fastq.gz" "scramble-mock-1_R1_001.fastq.gz" "scramble-mock-1_R2_001.fastq.gz" "scramble-mock-2_R1_001.fastq.gz" "scramble-mock-2_R2_001.fastq.gz" "scramble-mock-3_R1_001.fastq.gz" "scramble-mock-3_R2_001.fastq.gz" "scramble-mock-4_R1_001.fastq.gz" "scramble-mock-4_R2_001.fastq.gz"); motifs=("AGGGCGGCGCCGCCGCCGGAAGA" "TCTTCCGGCGGCGGCGCCGCCCT" "GAGGGCACCCGGAGGGGGAGAGG" "CCTCTCCCCCTCCGGGTGCCCTC"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(zgrep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> counts_scramble120h.txt; done &
+
+
+Count the following sequences in small RNAs (KOS homology)
+>X17626.1:183-241 Human rRNA primary transcript internal transcribed spacer 2 (ITS2)
+
+TGGCGGGGGGG
+AGAGGGGGGCG
+CGCCCGGCTGA
+GAGAGACGGGG
+AGGGCGGCGCC
+GGCGCCGCCCT
+CCCCGTCTCTC
+TCAGCCGGGCG
+CGCCCCCCTCT
+CCCCCCCGCCA
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("TGGCGGGGGGG" "AGAGGGGGGCG" "CGCCCGGCTGA" "GAGAGACGGGG" "AGGGCGGCGCC" "GGCGCCGCCCT" "CCCCGTCTCTC" "TCAGCCGGGCG" "CGCCCCCCTCT" "CCCCCCCGCCA"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> smallRNA.txt; done &
+
+count the following sequences in small RNAs 
+>X17626.1:140-173 (flanking KOS down) Human rRNA primary transcript internal transcribed spacer 2 (ITS2), 
+CCCTTCCCCCT 
+CCCCCCGCGGG 
+CCCTGCGTGGT
+ACCACGCAGGG 
+CCCGCGGGGGG 
+AGGGGGAAGGG
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("CCCTTCCCCCT" "CCCCCCGCGGG" "CCCTGCGTGGT" "ACCACGCAGGG" "CCCGCGGGGGG" "AGGGGGAAGGG"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> smallRNAflankdn.txt; done &
+
+
+count the following sequences in small RNAs 
+>X17626.1:251-283 Flanking KOS upstream) Human rRNA primary transcript internal transcribed spacer 2 (ITS2)
+ACGGAGAGGGA 
+AAGAGAGAGCC 
+GGCTCGGGCCG
+CGGCCCGAGCC 
+GGCTCTCTCTT 
+TCCCTCTCCGT
+
+files=("HSV1_R1_001.fastq" "HSV1_R2_001.fastq" "HSV2_R1_001.fastq" "HSV2_R2_001.fastq" "HSV3_R1_001.fastq" "HSV3_R2_001.fastq" "HSV4_R1_001.fastq" "HSV4_R2_001.fastq" "mock1_R1_001.fastq" "mock1_R2_001.fastq" "mock2_R1_001.fastq" "mock2_R2_001.fastq" "mock3_R1_001.fastq" "mock3_R2_001.fastq" "mock4_R1_001.fastq" "mock4_R2_001.fastq"); motifs=("ACGGAGAGGGA" "AAGAGAGAGCC" "GGCTCGGGCCG" "CGGCCCGAGCC" "GGCTCTCTCTT" "TCCCTCTCCGT"); for file in "${files[@]}"; do counts=""; for motif in "${motifs[@]}"; do count=$(grep -o -i "$motif" "$file" | wc -l); counts+="\t$count"; done; if [ -z "$counts" ]; then counts="\t0"; fi; echo -e "$counts" >> smallRNAflankup.txt; done &
+
+
